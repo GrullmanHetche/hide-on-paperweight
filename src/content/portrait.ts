@@ -41,7 +41,7 @@ export const portrait: PortraitData = {
 
 export const yuhyeonPortrait: PortraitData = {
   name: "LEE YUHYEON", birthDate: "2004.12.17", tokenAsset: "/yhnng.png", bagAsset: "/yhbag.png",
-  observations: [{ id: "like-glasses", text: "안경 같은 사람" }],
+  observations: [{ id: "like-glasses", text: "안경 같은 사람.\n열심히 생각해 봤습니다. 이유는... 비밀입니다." }],
   belongings: [
     {"id": "macbook", "name": "맥북", "asset": "/yhmacbook.png", "desc": "항상 켜져 있음. 탭 47개.", "initialPosition": {"x": 0.04, "y": 0.04}, "mobilePosition": {"x": 0, "y": 0.0}, "imageSize": {"width": 500, "height": 500}},
     {"id": "headset", "name": "헤드셋", "asset": "/yhheadset.png", "desc": "혼자 있고 싶을 때 필수템.", "initialPosition": {"x": 0.4, "y": 0.0}, "mobilePosition": {"x": 1, "y": 0.1111111111111111}, "imageSize": {"width": 500, "height": 500}},
