@@ -17,6 +17,7 @@ const literary = localFont({
 export const metadata: Metadata = {
   title: { default: "HIDE ON PAPERWEIGHT", template: "%s — HIDE ON PAPERWEIGHT" },
   description: "A quiet writing desk. Paper, glass, and the traces of two people.",
+  robots: { index: false, follow: false },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return <html lang="ko" className={literary.variable}><body>{children}<PlaylistSlip tracks={playlistTracks.map(({ id, title, artist }) => ({ id, title, artist }))} /></body></html>;
