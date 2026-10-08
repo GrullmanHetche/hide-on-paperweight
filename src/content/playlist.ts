@@ -1,0 +1,22 @@
+export type PlaylistTrack = Readonly<{ id: string; title: string; artist: string; desc?: string }>;
+
+// Existing titles, artists, notes and relative order are preserved.
+// Track numbers are display positions, independent of original IDs.
+export const playlistTracks: readonly PlaylistTrack[] = [
+  {"id": "legends-never-die", "title": "Legends Never Die", "artist": "Against The Current"},
+  {"id": "01", "title": "리턴매치", "artist": "이승윤", "desc": "Legends Never Die와 이어지는 비장한 에너지. 상혁의 서사를 여는 첫 곡."},
+  {"id": "02", "title": "Chance!", "artist": "페퍼톤스", "desc": "기승전결을 뒤엎을 격한 반전의 하이라이트. 기회를 저버리지 않는 상혁의 청량함."},
+  {"id": "03", "title": "정면돌파", "artist": "신인류", "desc": "경기를 앞둔 상혁의 비장한 선언."},
+  {"id": "04", "title": "심해", "artist": "청요일", "desc": "눅눅하고 축축한 불안 속, 유현의 실낱같은 희망."},
+  {"id": "05", "title": "반복되는 모든 게 날 괴롭게 해요", "artist": "박소은", "desc": "유현의 괴로운 일상과 잔잔한 고백."},
+  {"id": "06", "title": "철의 삶", "artist": "정우", "desc": "절망과 희망을 함께 안겨주는 유현의 테마."},
+  {"id": "07", "title": "어리고 부끄럽고 바보 같은", "artist": "Xdinary Heroes", "desc": "상혁이 유현에게 해주고 싶은 이야기. 두 사람의 연결고리."},
+  {"id": "08", "title": "애인발견!!!", "artist": "자우림", "desc": "서예실에서 만난 상혁에게 유현이 천천히 빠져들기 시작한 순간."},
+  {"id": "09", "title": "Telltale Sign", "artist": "에로틱웜즈익스히비션", "desc": "사랑에 빠졌을 때 일어나는 특별한 설렘의 시작."},
+  {"id": "10", "title": "너는 아니?", "artist": "MACOMMA", "desc": "고요한 방에서 상혁을 그리워하며 쌓아올린 유현의 마음."},
+  {"id": "11", "title": "커튼콜", "artist": "수은", "desc": "서로를 향한 더 깊어진 갈망과 사랑의 열망."},
+  {"id": "12", "title": "Peach Sand", "artist": "릴리 잇 머신", "desc": "첫 고백, 첫 데이트, 둘이 함께하는 모든 '처음'의 두근거림."},
+  {"id": "13", "title": "SORA", "artist": "최소나", "desc": "혼란한 세상 속에서 서로의 구원이 되어주는 두 사람."},
+  {"id": "14", "title": "STAY WITH ME", "artist": "자우림", "desc": "나의 유일한 구원에게 외치는 핍진한 사랑 노래."},
+  {"id": "15", "title": "데네브", "artist": "페퍼톤스", "desc": "청춘 드라마의 한 장면처럼, 우리의 마지막을 장식할 피날레."},
+];

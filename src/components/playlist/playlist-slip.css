@@ -1,0 +1,26 @@
+/* A peripheral paper object. The existing navigation stays above it. */
+.playlist-object { position: fixed; left: max(18px, env(safe-area-inset-left)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: var(--layer-desk-object); }
+.playlist-tab { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 15px; border: 1px solid #756c5018; color: var(--ink); background: var(--paper); box-shadow: 1px 3px 5px #51483a20; font: 12px/1.8 var(--font-literary), serif; letter-spacing: .1em; cursor: pointer; }
+.playlist-count { color: #625f57; font-size: 11px; letter-spacing: .04em; }
+.playlist-sheet { position: absolute; bottom: 56px; left: 0; width: min(310px, calc(100vw - 36px - env(safe-area-inset-left) - env(safe-area-inset-right))); padding: 20px 22px 22px; background: var(--paper); border: 1px solid #756c5018; box-shadow: 2px 5px 8px #51483a25; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(6px); transition: opacity .2s, transform .25s, visibility .25s; }
+.playlist-object[data-open="true"] .playlist-sheet { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+.playlist-sheet header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.playlist-sheet h2 { margin: 0; font: 400 15px/1.8 var(--font-literary), serif; letter-spacing: .12em; }
+.playlist-fold { min-height: 44px; min-width: 44px; padding: 8px 0; border: 0; background: transparent; color: #625f57; font: 12px/1.8 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; cursor: pointer; }
+.playlist-scroll { max-height: min(52svh, 430px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #756c5033 transparent; padding: 2px 5px 2px 0; }
+.playlist-scroll ol { list-style: none; padding: 0; margin: 0; }
+.playlist-scroll li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 13px; margin-bottom: 22px; }
+.playlist-scroll li:last-child { margin-bottom: 0; }
+.playlist-number { padding-top: 2px; color: #625f57; font: 13px/1.7 var(--font-literary), serif; }
+.playlist-scroll p { margin: 0; word-break: keep-all; overflow-wrap: anywhere; }
+.playlist-title { font: 15px/1.7 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+.playlist-artist { padding-top: 4px; color: #625f57; font: 12px/1.7 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+.playlist-tab:focus-visible, .playlist-fold:focus-visible, .playlist-scroll:focus-visible { outline: 1px solid #783e3670; outline-offset: 4px; }
+.playlist-sheet h2:focus { outline: 1px solid #783e3640; outline-offset: 5px; }
+@media (max-width: 760px) {
+  .playlist-object { left: max(12px, env(safe-area-inset-left)); bottom: calc(8px + env(safe-area-inset-bottom)); }
+  .playlist-tab { padding-inline: 12px; font-size: 11px; }
+  .playlist-sheet { width: min(310px, calc(100vw - 24px - env(safe-area-inset-left) - env(safe-area-inset-right))); padding: 16px 18px 20px; bottom: 52px; }
+  .playlist-scroll { max-height: min(48svh, 390px); }
+}
+@media (prefers-reduced-motion: reduce) { .playlist-sheet { transition: none; transform: none; } }

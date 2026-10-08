@@ -1,0 +1,41 @@
+.marginalia-paper { min-height: max(670px, 77svh); }
+.marginal-composition { padding: 24px 0 70px; margin: 0; list-style: none; }
+/* Every third cluster repeats an editorial placement, in normal flow.
+   Growing histories reserve their space, so revealing ink cannot move paper. */
+.marginal-cluster { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: start; min-height: 156px; margin-bottom: 90px; }
+.marginal-cluster:last-child { margin-bottom: 0; }
+.marginal-language { grid-column: 2 / 6; grid-row: 1; }
+.marginal-language h2 { margin: 0; font-weight: 400; }
+.marginal-term { display: inline-block; max-width: 100%; padding: 4px 0; border: 0; border-bottom: 1px solid #756c5045; background: transparent; color: var(--ink); font: 400 24px/1.8 "Noto Serif KR", "AppleMyungjo", "Batang", serif; text-align: left; cursor: pointer; word-break: keep-all; overflow-wrap: anywhere; transition: color .2s, border-color .2s; }
+.marginal-term:hover, .marginal-term:focus-visible { border-bottom-color: #46443e90; }
+.marginal-term:focus-visible { outline: 1px solid #783e3660; outline-offset: 6px; }
+.marginal-source { display: block; margin-top: 4px; font: 12px/1.8 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color: #625f57; }
+.marginal-echo { margin: 18px 0 0 18px; }
+.marginal-echo p { margin: 0; font: 18px/1.8 "Noto Serif KR", "AppleMyungjo", "Batang", serif; word-break: keep-all; }
+.marginal-leader { grid-column: 6 / 8; grid-row: 1; margin: 32px 18px 0 12px; border-top: 1px solid #756c5035; transform: rotate(-3deg); }
+.marginal-notes { grid-column: 8 / -1; grid-row: 1; margin: 20px 0 0; padding: 0; list-style: none; }
+.marginal-note { color: #625f57; font: 13px/1.95 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; word-break: keep-all; overflow-wrap: anywhere; transition: color .25s, opacity .25s; }
+.marginal-note + .marginal-note { margin-top: 28px; }
+.marginal-note p { margin: 5px 0 0; white-space: pre-wrap; }
+.marginal-date { font: 13px/1.8 var(--font-literary), serif; letter-spacing: .055em; }
+.marginal-note[data-visible="false"] { visibility: hidden; opacity: 0; }
+.marginal-cluster[data-selected="true"] .marginal-note, .marginal-cluster:hover .marginal-note[data-visible="true"] { color: var(--ink); }
+.marginal-cluster:nth-child(3n + 2) .marginal-language { grid-column: 7 / 10; }
+.marginal-cluster:nth-child(3n + 2) .marginal-leader { grid-column: 5 / 7; transform: rotate(3deg); }
+.marginal-cluster:nth-child(3n + 2) .marginal-notes { grid-column: 1 / 5; margin-top: 27px; }
+.marginal-cluster:nth-child(3n) .marginal-language { grid-column: 3 / 7; }
+.marginal-cluster:nth-child(3n) .marginal-notes { grid-column: 9 / -1; }
+.marginal-cluster:nth-child(3n) .marginal-leader { grid-column: 7 / 9; }
+@media (max-width: 760px) {
+  .marginalia-paper { min-height: 77svh; }
+  .marginal-composition { padding: 10px 0 60px; }
+  .marginal-cluster { display: block; min-height: 170px; margin-bottom: 76px; }
+  .marginal-cluster:nth-child(3n + 2) { padding-left: 18px; }
+  .marginal-term { font-size: 22px; }
+  .marginal-leader { width: 30px; margin: 24px 0 16px 8px; transform: none !important; }
+  .marginal-notes, .marginal-cluster:nth-child(n) .marginal-notes { margin: 0 0 0 8px; }
+  .marginal-note { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marginal-term, .marginal-note { transition: none; }
+}

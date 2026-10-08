@@ -1,0 +1,23 @@
+.peripheral-navigation { --weight-size: 76px; position: fixed; right: clamp(42px, 6vw, 80px); top: clamp(48px, 8svh, 76px); width: 0; height: 0; z-index: var(--layer-navigation); }
+.peripheral-navigation .paperweight, .peripheral-navigation .weight-shadow { animation: none !important; }
+.peripheral-navigation .weight-shadow { filter: blur(4px); opacity: .65; }
+.peripheral-navigation .radial-link { width: 150px; font-size: 13px; }
+.peripheral-navigation .radial-link span { background: var(--paper); }
+.peripheral-navigation .radial-link[aria-current="page"] span { color: #783e36; }
+.peripheral-navigation .radial-link:nth-child(1) { left: -150px; top: -20px; }
+.peripheral-navigation .radial-link:nth-child(2) { left: -195px; top: 40px; }
+.peripheral-navigation .radial-link:nth-child(3) { left: -205px; top: 105px; }
+.peripheral-navigation .radial-link:nth-child(4) { left: -178px; top: 170px; }
+.peripheral-navigation .radial-link:nth-child(5) { left: -105px; top: 222px; }
+.peripheral-navigation .radial-link:nth-child(6) { left: -55px; top: 280px; }
+.peripheral-home { position: absolute; left: -255px; top: 322px; width: 280px; padding: 10px 5px; font-size: 12px; letter-spacing: .07em; text-decoration: none; text-align: center; background: var(--paper); opacity: 0; visibility: hidden; }
+.peripheral-navigation[data-open="true"] .peripheral-home { opacity: 1; visibility: visible; }
+.peripheral-home:focus-visible { outline: 1px solid #783e3660; }
+@media (max-width: 760px) {
+  .peripheral-navigation { --weight-size: 44px; top: 47px; right: 22px; }
+  .peripheral-navigation .radial-navigation { position: absolute; right: -8px; left: auto; top: 45px; width: min(82vw, 330px); padding: 14px 16px 10px; background: var(--paper); box-shadow: 1px 3px 5px #51483a15; transform: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+  .peripheral-navigation .radial-link:nth-child(n) { position: relative; left: auto; top: auto; width: auto; font-size: 12px; transform: translateY(-6px); }
+  .peripheral-navigation[data-open="true"] .radial-link:nth-child(n) { transform: none; }
+  .peripheral-navigation .peripheral-home { position: relative; left: auto; top: auto; width: auto; grid-column: 1 / -1; padding: 12px 0; font-size: 11px; }
+  .peripheral-navigation:not([data-open="true"]) .radial-navigation { visibility: hidden; pointer-events: none; }
+}

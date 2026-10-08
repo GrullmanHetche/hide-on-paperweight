@@ -1,0 +1,53 @@
+/* The desk, light, outer sheet and header are the canonical internal page. */
+.borrowed-paper { padding-bottom: 100px; }
+.plate-composition { list-style: none; padding: 0; margin: 0; }
+.plate-composition > li { width: min(66%, 420px); margin: 0 0 100px 3%; }
+.plate-composition > li:nth-child(3n + 2) { margin-left: auto; margin-right: 2%; width: min(75%, 480px); }
+.plate-composition > li:nth-child(3n) { margin-left: 10%; width: min(61%, 380px); }
+.plate-composition > li[data-orientation="landscape"] { width: min(90%, 650px); }
+.plate-composition figure { margin: 0; }
+.plate-select { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.plate-print { position: relative; isolation: isolate; display: block; padding: 8px; background: var(--paper); box-shadow: 1px 3px 5px #51483a25; transform: rotate(-.35deg); transition: translate .2s, box-shadow .2s; }
+.plate-composition > li:nth-child(even) .plate-print { transform: rotate(.3deg); }
+.plate-composition > li[data-kind="document"] .plate-print::before, .plate-composition > li[data-kind="document"] .plate-print::after { content: ""; position: absolute; inset: 0; background: var(--paper); border: 1px solid #756c5015; z-index: -1; transform: translate(3px, 3px) rotate(.25deg); box-shadow: 1px 2px 3px #51483a18; }
+.plate-composition > li[data-kind="document"] .plate-print::after { transform: translate(-2px, 5px) rotate(-.2deg); z-index: -2; }
+.plate-select:hover .plate-print, .plate-select:focus-visible .plate-print { translate: 0 -1px; box-shadow: 2px 5px 7px #51483a2c; }
+.plate-select:focus-visible, .plate-text-control:focus-visible, .plate-original:focus-visible, .plate-accessible-text summary:focus-visible, .plate-reading-surface:focus-visible { outline: 1px solid #783e3670; outline-offset: 6px; }
+.plate-print img, .plate-reading-art img { display: block; width: 100%; height: auto; }
+.plate-caption { margin: 26px 0 0 12px; color: var(--ink); }
+.plate-number { display: block; font: 13px/1.8 var(--font-literary), serif; letter-spacing: .1em; color: #625f57; }
+.plate-caption h2, .plate-caption h3 { margin: 13px 0 0; font: 400 19px/1.8 "Noto Serif KR", "AppleMyungjo", "Batang", serif; word-break: keep-all; overflow-wrap: anywhere; }
+.plate-caption p { margin: 7px 0 0; font: 13px/1.9 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; }
+.plate-caption .plate-note { font-size: 15px; line-height: 2; margin-top: 20px; max-width: 44ch; }
+.plate-provenance { display: flex; flex-wrap: wrap; gap: 16px; }
+.plate-inspection { animation: manuscript-reveal 260ms ease-out both; }
+.plate-reading-heading { margin: 30px 0 38px; scroll-margin-top: 90px; }
+.plate-reading-heading:focus { outline: none; }
+.plate-reading-heading .plate-caption { margin-left: 0; }
+.plate-reading-surface { width: 100%; overflow-x: auto; padding: 2px 3px 14px; }
+.plate-reading-art { width: 100%; max-width: 850px; margin-inline: auto; box-shadow: 1px 3px 5px #51483a20; }
+.plate-reading-surface[data-zoom="true"] .plate-reading-art { width: 180%; max-width: none; }
+.plate-document-controls, .plate-document-controls nav { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
+.plate-document-controls { justify-content: space-between; margin: 0 0 22px; font-size: 14px; }
+.plate-text-control { display: inline-block; padding: 8px 0; border: 0; background: transparent; color: var(--ink); font: 13px/1.8 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; cursor: pointer; }
+.plate-text-control:disabled { opacity: .4; cursor: default; }
+.plate-reading-art > .plate-text-control { margin: 12px; }
+.plate-original { display: inline-block; margin: 32px 0 0; font: 13px/1.8 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; text-underline-offset: 5px; }
+.plate-accessible-text { margin-top: 26px; font: 14px/1.9 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+.plate-accessible-text summary { width: fit-content; cursor: pointer; }
+.plate-accessible-text > div { white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 20px; }
+@media (max-width: 760px) {
+  .borrowed-desk .pressed-sheet-stack { width: 94vw; }
+  .borrowed-paper { padding: 34px 18px 64px; }
+  .plate-composition > li:nth-child(n) { width: calc(100% - 10px); margin: 0 5px 70px; }
+  .plate-print { padding: 5px; }
+  .plate-caption { margin-left: 5px; }
+  .plate-caption h2, .plate-caption h3 { font-size: 18px; }
+  .plate-document-controls, .plate-document-controls nav { gap: 14px; }
+  .plate-reading-surface[data-zoom="true"] .plate-reading-art { width: 230%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plate-inspection { animation: none; }
+  .plate-print { transition: none; }
+  .plate-select:hover .plate-print, .plate-select:focus-visible .plate-print { translate: none; }
+}

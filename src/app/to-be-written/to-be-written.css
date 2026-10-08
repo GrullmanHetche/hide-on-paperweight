@@ -1,0 +1,25 @@
+/* One unfinished sheet; canonical desk/light/header/texture remain shared. */
+.working-paper { min-height: max(670px, 77svh); padding-bottom: clamp(120px, 18svh, 180px); }
+.working-lines { list-style: none; padding: 20px 0 0; margin: 0; }
+.working-line { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 16px 30px; max-width: 650px; margin: 0 0 64px 3%; }
+.working-line:nth-child(3n + 2) { margin-left: 9%; margin-bottom: 78px; }
+.working-line:nth-child(3n) { margin-left: 1%; margin-bottom: 58px; }
+.working-line:last-child { margin-bottom: 0; }
+.working-record { min-width: 0; }
+.working-line h2 { margin: 0; font: 400 21px/1.9 "Noto Serif KR", "AppleMyungjo", "Batang", serif; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; }
+.working-time, .working-direction { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 13px/1.9 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color: #625f57; overflow-wrap: anywhere; }
+.working-time { margin-bottom: 12px; }
+.working-direction { margin-top: 12px; }
+.working-note { margin: 20px 0 0; font: 15px/2 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; }
+.working-notation { align-self: end; padding-bottom: 5px; color: #625f57; font: 14px/1.9 var(--font-literary), serif; letter-spacing: .04em; white-space: nowrap; }
+.working-notation a { display: inline-block; padding: 6px 3px; text-decoration: none; text-underline-offset: 4px; }
+.working-notation a:hover { text-decoration: underline; }
+.working-notation a:focus-visible { outline: 1px solid #783e3670; outline-offset: 4px; }
+@media (max-width: 760px) {
+  .working-paper { padding-bottom: 120px; }
+  .working-line:nth-child(n) { grid-template-columns: minmax(0, 1fr); gap: 14px; margin-left: 0; margin-bottom: 52px; }
+  .working-line:nth-child(even) { margin-left: 8px; }
+  .working-line:last-child { margin-bottom: 0; }
+  .working-line h2 { font-size: 19px; }
+  .working-notation { justify-self: end; padding-bottom: 0; }
+}
